@@ -39,6 +39,7 @@
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // btnLoad
@@ -49,6 +50,7 @@
             this.btnLoad.TabIndex = 0;
             this.btnLoad.Text = "Kies bestand";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.BtnLoad_Click);
             // 
             // cbxContacts
             // 
@@ -130,8 +132,15 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(332, 23);
             this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "button1";
+            this.btnSave.Text = "Opslaan";
             this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // ofd
+            // 
+            this.ofd.FileName = "openFileDialog1";
+            this.ofd.Filter = "Tekstbestanden|*;txt";
+            this.ofd.InitialDirectory = "C:\\contacten\\";
+            this.ofd.FileOk += new System.ComponentModel.CancelEventHandler(this.Ofd_FileOk);
             // 
             // frmContacts
             // 
@@ -169,6 +178,7 @@
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.OpenFileDialog ofd;
     }
 }
 
