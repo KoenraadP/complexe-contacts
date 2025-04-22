@@ -60,6 +60,7 @@
             this.cbxContacts.Name = "cbxContacts";
             this.cbxContacts.Size = new System.Drawing.Size(332, 21);
             this.cbxContacts.TabIndex = 1;
+            this.cbxContacts.SelectedIndexChanged += new System.EventHandler(this.CbxContacts_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -134,6 +135,7 @@
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Opslaan";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // ofd
             // 

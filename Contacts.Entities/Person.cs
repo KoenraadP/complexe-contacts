@@ -18,5 +18,16 @@
             LastName = lastName;
             Email = email;
         }
+
+        // override om de naam van de persoon weer te geven
+        // in de combobox
+        public override string ToString()
+        {
+            // we willen de naam van de persoon weergeven
+            // in de combobox, dus moeten we de naam
+            // samenstellen uit de properties
+            // alternatief: LastName + " " + FirstName
+            return $"{LastName} {FirstName}";
+        }
     }
 }
