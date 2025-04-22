@@ -1,4 +1,5 @@
-﻿using Contacts.Entities;
+﻿using System;
+using Contacts.Entities;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -29,7 +30,28 @@ namespace Contacts.Bll
             // door te controleren wat er momenteel op de eerste
             // plaats in de array zit
             // dit zou MOETEN alle data van de eerste persoon zijn
-            Debug.WriteLine(lines[0]);
+            // Debug.WriteLine(lines[0]);
+
+            // alle lijntjes in de array
+            // omzetten naar Person objects
+            foreach (string line in lines)
+            {
+                // iedere lijn bevat het ; teken om de aparte
+                // properties/kolommen te scheiden van elkaar
+                // dus moeten we deze lijn splitsen
+                string[] personData = line.Split(';');
+
+                // testen of de data correct in de array zit
+                // Debug.WriteLine(personData[1]);
+
+                // nieuwe Person aanmaken met de data
+                // uit de array
+                Person p = new Person(Convert.ToInt32(personData[0]),
+                    personData[1], personData[2], personData[3]);
+
+                // de nieuwe persoon toevoegen aan de lijst
+                lstPeople.Add(p);
+            }
         }
     }
 }
